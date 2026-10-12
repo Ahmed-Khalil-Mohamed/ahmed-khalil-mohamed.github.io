@@ -40,6 +40,7 @@ function setLanguage(next) {
   document.querySelector('.close-dialog').setAttribute('aria-label', next === 'en' ? 'Close project details' : 'إغلاق تفاصيل المشروع');
   document.querySelectorAll('.project-image').forEach(button => button.setAttribute('aria-label', next === 'en' ? `Explore ${projects[button.dataset.project].name} project` : `تفاصيل مشروع ${projects[button.dataset.project].name}`));
   try { localStorage.setItem('portfolio-language', next); } catch {}
+  window.portfolioMotion?.refreshText();
 }
 languageButtons.forEach(button => button.addEventListener('click', () => setLanguage(language === 'en' ? 'ar' : 'en')));
 menuToggle.addEventListener('click', () => { mobileMenu.showModal(); menuToggle.setAttribute('aria-expanded', 'true'); });
@@ -64,9 +65,6 @@ try { if (localStorage.getItem('portfolio-language') === 'ar') setLanguage('ar')
 document.querySelector('#year').textContent = new Date().getFullYear();
 setupProjectGallery({ dialog, projects, getLanguage: () => language });
 if ('IntersectionObserver' in window) {
-  root.classList.add('js-motion');
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .08 });
-  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
   const navigation = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { document.querySelectorAll('nav a').forEach(link => { if(link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); }); } }), {rootMargin:'-15% 0px -50% 0px'});
   document.querySelectorAll('main section[id]').forEach(section => navigation.observe(section));
 }

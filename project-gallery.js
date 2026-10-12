@@ -58,7 +58,7 @@ function setupProjectGallery({ dialog, projects, getLanguage }) {
     content.innerHTML = `<div class="project-layout">
       <section class="project-gallery" aria-label="${labels.gallery}" dir="ltr">
         <div class="gallery-stage" role="group" aria-label="${labels.gallery}" tabindex="0">
-          ${images.map((image,i) => `<figure class="gallery-slide ${i === 0 ? 'is-active' : ''}" aria-hidden="${i !== 0}"><img src="${escape(image.src)}" alt="${escape(project.name + ': ' + image[language])}" decoding="async"></figure>`).join('')}
+          ${images.map((image,i) => `<figure class="gallery-slide ${i === 0 ? 'is-active' : ''}" aria-hidden="${i !== 0}"><img src="${escape(image.src)}" alt="${escape(project.name + ': ' + image[language])}" decoding="async"><span class="image-loading" aria-hidden="true">${window.signatureMark()}<span class="image-load-error">${ar ? 'الصورة غير متاحة' : 'Image unavailable'}</span></span></figure>`).join('')}
         </div>
         <div class="gallery-meta"><span class="gallery-caption" dir="${ar ? 'rtl' : 'ltr'}">${escape(images[0][language])}</span><span class="gallery-count">01 / ${String(images.length).padStart(2,'0')}</span></div>
         ${images.length > 1 ? `<div class="gallery-controls"><button class="gallery-previous icon-button" aria-label="${labels.previous}">${icon('caret-left')}</button><div class="gallery-dots">${images.map((image,i) => `<button class="gallery-dot" data-slide="${i}" aria-current="${i === 0}" aria-label="${labels.screenshot} ${i+1}: ${escape(image[language])}"><span></span></button>`).join('')}</div><button class="gallery-next icon-button" aria-label="${labels.next}">${icon('caret-right')}</button><button class="gallery-play icon-button" aria-label="${labels.pause}">${icon('pause')}</button></div>` : ''}
@@ -74,6 +74,17 @@ function setupProjectGallery({ dialog, projects, getLanguage }) {
         <div class="project-modal-actions"><a class="button primary" href="${escape(project.url)}" target="_blank" rel="noopener">${escape(copy.link)}<span class="icon-circle">${icon('arrow-up-right')}</span></a>${project.downloads ? `<a class="text-link" href="${escape(project.url)}/releases/latest" target="_blank" rel="noopener">${labels.download}${icon('arrow-up-right')}</a>` : ''}</div>
       </section>
     </div>`;
+    content.querySelectorAll('.gallery-slide').forEach(slide => {
+      const img = slide.querySelector('img');
+      const settle = () => {
+        if (!img.complete) return;
+        slide.classList.toggle('image-ready', img.naturalWidth > 0);
+        slide.classList.toggle('image-failed', img.naturalWidth === 0);
+      };
+      img.addEventListener('load', settle, {once:true});
+      img.addEventListener('error', settle, {once:true});
+      settle();
+    });
     const gallery = content.querySelector('.project-gallery');
     gallery.addEventListener('pointerenter', () => { if (!current) return; current.hovered = true; syncPlayback(); });
     gallery.addEventListener('pointerleave', () => { if (!current) return; current.hovered = false; syncPlayback(); });

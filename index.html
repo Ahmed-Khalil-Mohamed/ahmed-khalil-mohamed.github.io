@@ -17,12 +17,32 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" as="font" href="jakarta-regular.ttf" type="font/ttf" crossorigin>
   <link rel="preload" as="font" href="signature.ttf" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="motion.css?v=9">
+  <script>
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('intro-pending');
+      window.portfolioIntroFallback = setTimeout(() => {
+        document.documentElement.classList.remove('intro-pending');
+        document.querySelectorAll('[data-intro-inert]').forEach(el => { el.inert = false; el.removeAttribute('data-intro-inert'); });
+        document.dispatchEvent(new Event('portfolio:intro-ready'));
+      }, 5000);
+    }
+  </script>
+  <script src="signature-mark.js?v=9" defer></script>
+  <script src="motion.js?v=9" defer></script>
   <script src="project-data.js?v=8" defer></script>
-  <script src="project-gallery.js?v=8" defer></script>
-  <script src="app.js?v=8" defer></script>
+  <script src="project-gallery.js?v=9" defer></script>
+  <script src="app.js?v=9" defer></script>
 </head>
 <body>
+  <div class="site-intro" id="site-intro" aria-label="Welcome / أهلاً بك">
+    <div class="intro-center">
+      <div class="intro-signature" data-ink-signature></div>
+      <p class="intro-name" data-en="Ahmed Khalil" data-ar="أحمد خليل">Ahmed Khalil</p>
+    </div>
+    <button class="intro-skip" data-en="Enter website" data-ar="دخول الموقع">Enter website</button>
+  </div>
   <a class="skip-link" href="#main" data-en="Skip to content" data-ar="انتقل للمحتوى">Skip to content</a>
   <header class="header shell">
     <a class="brand signature" href="#" aria-label="Ahmed Khalil, home">AK<span class="signature-stroke" aria-hidden="true"></span></a>
