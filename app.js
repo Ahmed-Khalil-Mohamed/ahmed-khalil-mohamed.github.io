@@ -6,6 +6,7 @@ const menuToggle = document.querySelector('.menu-toggle');
 const menuClose = document.querySelector('.close-menu');
 const dialog = document.querySelector('#project-dialog');
 const projects = {
+  ...additionalProjects,
   mimarx: {
     image: 'mimarx-academy.jpg', name: 'MIMARX Studio & Academy', url: 'https://www.mimarx-studio.com/academy',
     en: {description: 'Designed and developed the complete public website for MIMARX, connecting the architecture studio, academy workshops, project showcases, and enrollment journey.', items: ['Created responsive layouts with Arabic/English switching, RTL support, and light/dark themes.', 'Built interactive project galleries, workshop pages, and participant testimonial sections.', 'Implemented enrollment forms and a WhatsApp follow-up flow when the registration service is unavailable.', 'Built a Node.js publishing workflow with CSS bundling, content-based asset versioning, and local-link validation.'], license: 'Client commission · Full website design & development. Stack: HTML, CSS, vanilla JavaScript, and Node.js build tools.', link: 'Visit live website'},
@@ -22,6 +23,7 @@ const projects = {
     ar: {description: 'مساحة عمل على Windows تجمع أدوات الذكاء الاصطناعي المدعومة والمحادثات وسياق المشاريع والأدوار المتخصصة.', items: ['ربط أدوات مدعومة منها Codex CLI وClaude Code CLI وOllama وLM Studio.', 'تنسيق مهام المتخصصين عبر سير عمل Mix.', '300 تعريف دور قابل للتعديل، تعمل من خلال مزودي الذكاء الاصطناعي المختارين.', 'مراجعة التعديلات المقترحة قبل تطبيقها على الملفات.'], license: 'تطبيق مغلق المصدر. المستودع العام يحتوي على التوثيق والصور والتنزيلات.', link: 'المشروع والتوثيق'}
   }
 };
+Object.entries(featuredGalleryDetails).forEach(([key, details]) => Object.assign(projects[key], details));
 function setLanguage(next) {
   language = next;
   root.lang = next;
@@ -60,15 +62,7 @@ const desktopViewport = matchMedia('(min-width: 768px)');
 desktopViewport.addEventListener('change', event => { if (event.matches && mobileMenu.open) mobileMenu.close(); });
 try { if (localStorage.getItem('portfolio-language') === 'ar') setLanguage('ar'); } catch {}
 document.querySelector('#year').textContent = new Date().getFullYear();
-document.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => {
-  const project = projects[button.dataset.project];
-  const copy = project[language];
-  // Only fixed, authored project data is inserted here; no remote or user-supplied HTML.
-  document.querySelector('#dialog-content').innerHTML = `<img class="dialog-preview" src="${project.image}" alt="${project.name}"><h2 id="dialog-title">${project.name}</h2><p>${copy.description}</p><ul>${copy.items.map(item => `<li>${item}</li>`).join('')}</ul><p class="license">${copy.license}</p><div class="dialog-actions"><a class="button primary" href="${project.url}" target="_blank" rel="noopener">${copy.link} <span class="icon-circle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></a>${project.downloads ? `<a class="text-link" href="${project.url}/releases/latest" target="_blank" rel="noopener">${language === 'en' ? 'Windows downloads' : 'تنزيلات Windows'} <span class="icon-circle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></a>` : ''}</div>`;
-  dialog.showModal();
-}));
-document.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if(event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
+setupProjectGallery({ dialog, projects, getLanguage: () => language });
 if ('IntersectionObserver' in window) {
   root.classList.add('js-motion');
   const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .08 });

@@ -42,3 +42,6 @@ The AK favicon is outlined from the existing Allura signature font, with ICO and
 
 ## Additional projects
 Ten secondary project cards link to the owner's public repositories: Recall, FairShare, Stockroom, WarrantyVault, FileNest, GiveTime, ScopeDesk, RescueTable, FixLane, and QueueWise. Names and descriptions were checked against GitHub repository metadata and READMEs on 2026-10-13. Their original public/app-icon.png assets are stored under project-icons/. Cards use staggered scroll reveals and hover/focus feedback; reduced-motion preferences disable animation.
+
+## Project detail windows
+All 13 projects open a shared native dialog. The desktop layout keeps the screenshot gallery on the left and bilingual project details on the right; mobile stacks them. Multiple screenshots crossfade every five seconds, with previous/next, position selectors, and pause/play. Keyboard interaction stops autoplay; hover and hidden tabs suspend it. Reduced-motion disables autoplay and transitions. Closing clears the timer and returns focus to the opening control. Original interface screenshots are sourced from the owner?s public repositories; demonstration records inside screenshots are fictional.

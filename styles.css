@@ -147,3 +147,54 @@ dialog h2{font-family:Jakarta,'Segoe UI',sans-serif;font-size:clamp(1.7rem,5vw,2
 @media(min-width:1024px){.mini-project-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.mini-card{padding:1.1rem}.mini-card p{font-size:.8rem}}
 @media(prefers-reduced-motion:no-preference){.js-motion .mini-project.reveal{transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease);transition-delay:var(--mini-delay,0ms)}.js-motion .mini-project.reveal.visible{transform:none}.mini-card:hover,.mini-card:focus-visible{transform:translateY(-5px)}.mini-card:hover .mini-card-top img,.mini-card:focus-visible .mini-card-top img{transform:rotate(-5deg) scale(1.06)}.mini-card:hover .mini-arrow,.mini-card:focus-visible .mini-arrow{transform:translate(2px,-2px);color:#426c9f}}
 @media(prefers-reduced-transparency:reduce){.mini-card{background:#f4f7fa}}
+/* Project windows: image gallery on the left, structured content on the right. */
+#project-dialog{width:min(76rem,calc(100% - 2rem));max-width:none;max-height:90dvh;padding:0;overflow:hidden;border:1px solid #fff;border-radius:1.75rem;background:#fafcfe;box-shadow:0 30px 110px #23395230}
+#project-dialog::backdrop{background:#d2dce66b;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.project-dialog-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1.1rem .7rem 1.5rem;border-bottom:1px solid #dbe4ee;background:#ffffffad;font-size:.8rem;color:#66778c}
+#project-dialog .close-dialog{margin:0;flex-shrink:0}
+#dialog-content{max-height:calc(90dvh - 4.3rem);overflow-y:auto;overscroll-behavior:contain}
+.project-layout{display:grid;direction:ltr;grid-template-columns:minmax(0,1fr)}
+.project-gallery{min-width:0;padding:1.25rem;background:linear-gradient(140deg,#edf3f9,#f7fafd);border-bottom:1px solid #dbe4ee}
+.gallery-stage{position:relative;aspect-ratio:16/11;background:#e5edf5;border:1px solid #fff;border-radius:1rem;overflow:hidden;box-shadow:0 12px 30px #3c597816}
+.gallery-stage:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.gallery-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .75s var(--ease),visibility .75s;pointer-events:none}
+.gallery-slide.is-active{opacity:1;visibility:visible}
+.gallery-slide img{width:100%;height:100%;object-fit:contain}
+.gallery-meta{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;color:#5c6e84;font-size:.78rem}
+.gallery-count{font-variant-numeric:tabular-nums;white-space:nowrap;color:#7c8c9e}
+.gallery-controls{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.25rem}
+.gallery-controls .icon-button{min-width:2.75rem;min-height:2.75rem;background:#fff;border-color:#e1e9f1}
+.gallery-dots{display:flex;align-items:center}
+.gallery-dot{display:grid;place-items:center;background:none;width:2.25rem;height:2.75rem;padding:0}
+.gallery-dot span{display:block;width:6px;height:6px;background:#bac8d8;border-radius:100px;transition:width .35s var(--ease),background .35s var(--ease)}
+.gallery-dot[aria-current=true] span{width:20px;background:#52749a}
+#project-dialog .gallery-note{margin:1rem 0 0;font-size:.7rem;color:#8290a0;text-align:center}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.project-copy{min-width:0;padding:1.5rem}
+.project-identity{display:flex;gap:.65rem;align-items:center;margin-bottom:.8rem;color:#667b92;font-size:.8rem}
+.project-identity img{width:2rem;height:2rem;object-fit:contain;border-radius:.5rem}
+#project-dialog h2{font-family:Jakarta,'Segoe UI',sans-serif;font-size:clamp(1.85rem,3vw,2.5rem);line-height:1.2;letter-spacing:-.05em;overflow-wrap:anywhere}
+.project-copy[dir=rtl] h2{text-align:right}
+#project-dialog .project-platform{margin-top:.5rem;font-size:.8rem;color:#78879b}
+.project-copy-section{margin-top:1.6rem;padding-top:1.25rem;border-top:1px solid #dfe7ef}
+#project-dialog .project-copy-section h3{font-size:.9rem;line-height:1.5;letter-spacing:0;font-weight:600;color:#34455d}
+#project-dialog .project-copy-section p{font-size:.9rem;line-height:1.85;margin-top:.55rem}
+#project-dialog .project-copy-section ul{margin:.6rem 0 0;font-size:.85rem;line-height:1.8;padding-inline-start:1.15rem;color:#657286}
+#project-dialog .project-copy-section li+li{margin-top:.5rem}
+.project-stack{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.65rem}
+.project-stack span{border:1px solid #e0e8f1;border-radius:100px;padding:.3rem .65rem;font:400 .75rem/1.5 Jakarta,sans-serif;background:#f0f5fa;color:#5c7088}
+#project-dialog .project-license{margin-top:1.5rem;font-size:.73rem;line-height:1.8;color:#7b8a9e}
+.project-modal-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:1.4rem}
+.project-modal-actions .button{font-size:.8rem;gap:.75rem;min-height:3rem}
+.project-modal-actions .text-link{font-size:.78rem}
+.mini-card{width:100%;text-align:start;cursor:pointer;font:inherit;color:inherit}
+.mini-card .mini-name{font:600 .95rem/1.35 Jakarta,'Segoe UI',sans-serif;letter-spacing:-.025em;margin:0;overflow-wrap:anywhere}
+.mini-card .mini-summary{display:block;margin:.5rem 0 0;font-size:.8rem;line-height:1.7;color:#657286}
+[dir=rtl] .mini-card .mini-name{text-align:right}
+[dir=rtl] .mini-card .mini-summary{font-size:.87rem;line-height:1.8}
+.work-card{cursor:pointer}
+[dir=rtl] #project-dialog .project-copy-section p,[dir=rtl] #project-dialog .project-copy-section ul{font-size:.95rem}
+@media(min-width:768px){.project-layout{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:start}.project-gallery{position:sticky;top:0;align-self:start;min-height:100%;padding:2rem 1.5rem;border-bottom:0;border-right:1px solid #dbe4ee}.project-copy{padding:2rem}.gallery-stage{aspect-ratio:16/12}}
+@media(min-width:1024px){.project-gallery{padding:2.5rem 2rem}.project-copy{padding:2rem 2.5rem}.gallery-stage{aspect-ratio:16/11}}
+@media(max-width:380px){.project-copy,.project-gallery{padding:1rem}.gallery-controls{gap:.2rem}.gallery-dot{width:1.8rem}}
+@media(prefers-reduced-transparency:reduce){#project-dialog::backdrop{background:#d4deedeb;backdrop-filter:none;-webkit-backdrop-filter:none}}
