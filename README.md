@@ -18,18 +18,18 @@ No build step or package installation is required. Fonts and images are served l
 GitHub Pages: deploy from main, root folder. The repository name must be ahmed-khalil-mohamed.github.io. No custom domain or paid hosting is required.
 
 ## Content sources
-Profile and portrait: https://github.com/Ahmed-Khalil-Mohamed
+Profile: https://github.com/Ahmed-Khalil-Mohamed
 Clear Tool: https://github.com/Ahmed-Khalil-Mohamed/clear-tool
 NEXUS: https://github.com/Ahmed-Khalil-Mohamed/NEXUS
 Computer Science / AI studies and Flutter experience: owner-provided information.
 No graduation date, employer, university, proficiency score, or contact address is invented.
 
 ## Assets
-Portrait and application screenshots come from the owner's public GitHub profile and repositories. The product screenshots are actual interface captures. NEXUS remains proprietary; this site does not publish its application source.
+The current portrait was supplied directly by the owner. Application screenshots come from the owner's public repositories. The product screenshots are actual interface captures. NEXUS remains proprietary; this site does not publish its application source.
 Manrope by Mikhail Sharanda is distributed under the SIL Open Font License in FONT-LICENSE.txt.
 
 ## Visual system
-White liquid-glass web styling, a typographic AK signature in Allura, Plus Jakarta Sans for English, IBM Plex Sans Arabic for Arabic, and Phosphor Light icons. Original square portrait preserved without image alteration. Native scrollbar styling and reduced-motion/reduced-transparency preferences are supported.
+White liquid-glass web styling, a typographic AK signature in Allura, Plus Jakarta Sans for English, IBM Plex Sans Arabic for Arabic, and Phosphor Light icons. Owner-supplied portrait displayed with responsive CSS cropping; the image file is unaltered. Native scrollbar styling and reduced-motion/reduced-transparency preferences are supported.
 
 The glass-ribbon.jpg illustration was generated with the built-in image generation tool. Prompt: a clear optical-glass ribbon in an open flowing loop, pale ice blue refraction, bright white studio background, soft daylight, restrained highlights, no text or logos. It is decorative artwork, not a photograph of a physical product.
 
@@ -54,4 +54,7 @@ Text reveals use complete words to preserve Arabic shaping, with a single full-t
 ## Contact channels
 The owner supplied the public email and WhatsApp number. Facebook and LinkedIn profile URLs were read from the signed-in browser on 2026-10-13. Contact shortcuts appear in the hero and the full contact section. The phone uses Egypt's +20 prefix for WhatsApp. No message is sent automatically.
 
-contact-glass.png is a generated decorative image for the contact section only: two translucent frosted glass arcs on a pearl-white studio backdrop, suggesting conversation, with clear space for text. The hero retains glass-ribbon.jpg and the original portrait.
+contact-glass.png is a generated decorative image for the contact section only: two translucent frosted glass arcs on a pearl-white studio backdrop, suggesting conversation, with clear space for text. The hero retains glass-ribbon.jpg.
+
+## Mobile and button refinements
+refinements.css adjusts spacing, portrait framing, touch targets, project cards, and dialog controls for small screens. interactions.js adds a pointer-following glass highlight to controls, including dynamically created gallery buttons. Pointer tracking runs at most once per animation frame and is disabled for touch and reduced-motion preferences. portrait-2026.jpg is the new owner-supplied portrait, also used by the printable resume.

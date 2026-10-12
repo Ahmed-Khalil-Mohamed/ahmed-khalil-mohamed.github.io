@@ -100,6 +100,7 @@ function setupProjectGallery({ dialog, projects, getLanguage }) {
     content.querySelector('.gallery-next')?.addEventListener('click', () => showSlide(current.index + 1));
     content.querySelectorAll('.gallery-dot').forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.slide))));
     content.querySelector('.gallery-play')?.addEventListener('click', () => { current.paused = !current.paused; syncPlayback(); });
+    window.setupGlassControls?.(content);
     dialog.showModal();
     content.scrollTop = 0;
     closeButton.focus({preventScroll:true});
