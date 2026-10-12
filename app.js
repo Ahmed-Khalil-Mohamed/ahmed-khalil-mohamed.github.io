@@ -1,6 +1,9 @@
 const root = document.documentElement;
 let language = 'en';
-const languageButton = document.querySelector('#language');
+const languageButtons = document.querySelectorAll('[data-language-toggle]');
+const mobileMenu = document.querySelector('#mobile-menu');
+const menuToggle = document.querySelector('.menu-toggle');
+const menuClose = document.querySelector('.close-menu');
 const dialog = document.querySelector('#project-dialog');
 const projects = {
   mimarx: {
@@ -24,14 +27,37 @@ function setLanguage(next) {
   root.lang = next;
   root.dir = next === 'ar' ? 'rtl' : 'ltr';
   document.querySelectorAll('[data-en][data-ar]').forEach(element => element.textContent = element.dataset[next]);
-  languageButton.textContent = next === 'en' ? 'عربي' : 'EN';
-  languageButton.setAttribute('aria-label', next === 'en' ? 'Switch to Arabic' : 'Switch to English');
-  document.querySelector('nav').setAttribute('aria-label', next === 'en' ? 'Main navigation' : 'التنقل الرئيسي');
+  languageButtons.forEach(button => {
+    button.textContent = next === 'en' ? 'العربية' : 'English';
+    button.setAttribute('aria-label', next === 'en' ? 'Switch to Arabic' : 'Switch to English');
+  });
+  menuToggle.setAttribute('aria-label', next === 'en' ? 'Open menu' : 'فتح القائمة');
+  menuClose.setAttribute('aria-label', next === 'en' ? 'Close menu' : 'إغلاق القائمة');
+  mobileMenu.setAttribute('aria-label', next === 'en' ? 'Navigation menu' : 'قائمة التنقل');
+  document.querySelectorAll('nav').forEach(nav => nav.setAttribute('aria-label', next === 'en' ? 'Main navigation' : 'التنقل الرئيسي'));
   document.querySelector('.close-dialog').setAttribute('aria-label', next === 'en' ? 'Close project details' : 'إغلاق تفاصيل المشروع');
   document.querySelectorAll('.project-image').forEach(button => button.setAttribute('aria-label', next === 'en' ? `Explore ${projects[button.dataset.project].name} project` : `تفاصيل مشروع ${projects[button.dataset.project].name}`));
   try { localStorage.setItem('portfolio-language', next); } catch {}
 }
-languageButton.addEventListener('click', () => setLanguage(language === 'en' ? 'ar' : 'en'));
+languageButtons.forEach(button => button.addEventListener('click', () => setLanguage(language === 'en' ? 'ar' : 'en')));
+menuToggle.addEventListener('click', () => { mobileMenu.showModal(); menuToggle.setAttribute('aria-expanded', 'true'); });
+menuClose.addEventListener('click', () => mobileMenu.close());
+mobileMenu.addEventListener('keydown', event => {
+  if (event.key !== 'Tab') return;
+  const controls = [...mobileMenu.querySelectorAll('a[href], button:not([disabled])')];
+  const first = controls[0], last = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+});
+mobileMenu.addEventListener('close', () => menuToggle.setAttribute('aria-expanded', 'false'));
+mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.close()));
+mobileMenu.addEventListener('click', event => {
+  if (event.target !== mobileMenu) return;
+  const rect = mobileMenu.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) mobileMenu.close();
+});
+const desktopViewport = matchMedia('(min-width: 768px)');
+desktopViewport.addEventListener('change', event => { if (event.matches && mobileMenu.open) mobileMenu.close(); });
 try { if (localStorage.getItem('portfolio-language') === 'ar') setLanguage('ar'); } catch {}
 document.querySelector('#year').textContent = new Date().getFullYear();
 document.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => {

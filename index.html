@@ -17,23 +17,36 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" as="font" href="jakarta-regular.ttf" type="font/ttf" crossorigin>
   <link rel="preload" as="font" href="signature.ttf" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=5">
-  <script src="app.js?v=5" defer></script>
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script src="app.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-en="Skip to content" data-ar="انتقل للمحتوى">Skip to content</a>
   <header class="header shell">
     <a class="brand signature" href="#" aria-label="Ahmed Khalil, home">AK<span class="signature-stroke" aria-hidden="true"></span></a>
-    <nav aria-label="Main navigation">
+    <nav class="desktop-nav" aria-label="Main navigation">
       <a href="#home"><svg class="icon" aria-hidden="true"><use href="icons.svg#house"></use></svg><span data-en="Home" data-ar="الرئيسية">Home</span></a>
       <a href="#work"><svg class="icon" aria-hidden="true"><use href="icons.svg#squares-four"></use></svg><span data-en="Work" data-ar="المشاريع">Work</span></a>
       <a href="#about"><svg class="icon" aria-hidden="true"><use href="icons.svg#user-circle"></use></svg><span data-en="About" data-ar="عني">About</span></a>
       <a href="#contact"><svg class="icon" aria-hidden="true"><use href="icons.svg#paper-plane-tilt"></use></svg><span data-en="Contact" data-ar="تواصل">Contact</span></a>
     </nav>
     <div class="preferences">
-      <button id="language" class="icon-button language" aria-label="Switch to Arabic">عربي</button>
+      <button id="language" data-language-toggle class="icon-button language" aria-label="Switch to Arabic">عربي</button>
     </div>
+    <button class="menu-toggle icon-button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="icons.svg#list"></use></svg></button>
   </header>
+  <dialog id="mobile-menu" aria-label="Navigation menu">
+    <div class="drawer-top"><a class="signature drawer-brand" href="#home" aria-label="Ahmed Khalil, home">AK</a><button class="icon-button close-menu" aria-label="Close menu"><svg class="icon" aria-hidden="true"><use href="icons.svg#x"></use></svg></button></div>
+    <p class="drawer-name" data-en="Ahmed Khalil" data-ar="أحمد خليل">Ahmed Khalil</p>
+    <nav class="mobile-nav" aria-label="Main navigation">
+      <a href="#home"><svg class="icon" aria-hidden="true"><use href="icons.svg#house"></use></svg><span data-en="Home" data-ar="الرئيسية">Home</span></a>
+      <a href="#work"><svg class="icon" aria-hidden="true"><use href="icons.svg#squares-four"></use></svg><span data-en="Work" data-ar="المشاريع">Work</span></a>
+      <a href="#about"><svg class="icon" aria-hidden="true"><use href="icons.svg#user-circle"></use></svg><span data-en="About" data-ar="عني">About</span></a>
+      <a href="#contact"><svg class="icon" aria-hidden="true"><use href="icons.svg#paper-plane-tilt"></use></svg><span data-en="Contact" data-ar="تواصل">Contact</span></a>
+    </nav>
+    <div class="drawer-bottom"><span data-en="Language" data-ar="اللغة">Language</span><button class="drawer-language" data-language-toggle aria-label="Switch to Arabic">العربية</button></div>
+    <a class="drawer-resume text-link" href="resume.html" target="_blank" rel="noopener"><span data-en="View résumé" data-ar="السيرة الذاتية">View résumé</span><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></a>
+  </dialog>
   <main id="main">
     <section id="home" class="hero shell" aria-labelledby="hero-title">
       <img class="glass-art" src="glass-ribbon.jpg" width="1536" height="1024" alt="" aria-hidden="true">
