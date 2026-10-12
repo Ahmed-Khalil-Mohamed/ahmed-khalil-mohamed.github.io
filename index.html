@@ -17,8 +17,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" as="font" href="jakarta-regular.ttf" type="font/ttf" crossorigin>
   <link rel="preload" as="font" href="signature.ttf" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=4">
-  <script src="app.js?v=4" defer></script>
+  <link rel="stylesheet" href="styles.css?v=5">
+  <script src="app.js?v=5" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-en="Skip to content" data-ar="انتقل للمحتوى">Skip to content</a>
@@ -52,28 +52,33 @@
       </figure>
     </section>
     <section id="work" class="work shell section" aria-labelledby="work-title">
-      <div class="section-heading reveal"><h2 id="work-title" data-en="Selected work." data-ar="مشاريع مختارة.">Selected work.</h2><p data-en="Useful ideas, brought to life. A closer look at what I've been building." data-ar="أفكار مفيدة تحولت إلى واقع. نظرة أقرب على مشاريعي.">Useful ideas, brought to life. A closer look at what I've been building.</p></div>
-      <div class="projects">
-        <article class="project reveal">
-          <button class="project-image clear-preview" data-project="clear" aria-label="Explore Clear Tool project"><img src="clear-tool.png" alt="Clear Tool: Windows hardware overview and maintenance workspace" width="1600" height="1000" loading="lazy"><span class="image-action" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button>
-          <div class="project-content"><img class="project-logo" src="clear-icon.png" width="56" height="56" alt="" loading="lazy"><div class="project-heading"><h3>Clear Tool</h3><span class="project-kind" data-en="Windows utility" data-ar="أدوات Windows">Windows utility</span></div>
-          <p data-en="A clearer view of your PC. Hardware, games, storage, and updates in one bilingual workspace." data-ar="صورة أوضح لجهازك. المكونات والألعاب والتخزين والتحديثات في مساحة عمل تدعم العربية والإنجليزية.">A clearer view of your PC. Hardware, games, storage, and updates in one bilingual workspace.</p>
-          <div class="project-meta"><span>React</span><span>Electron</span><span data-en="Open source" data-ar="مفتوح المصدر">Open source</span></div>
-          <button class="text-link" data-project="clear"><span data-en="Explore project" data-ar="اكتشف المشروع">Explore project</span><span class="icon-circle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button></div>
+      <div class="section-heading reveal"><h2 id="work-title" data-en="Selected work." data-ar="مشاريع مختارة.">Selected work.</h2><p data-en="Client websites and applications I design and build." data-ar="مواقع للعملاء وتطبيقات من تصميمي وتطويري.">Client websites and applications I design and build.</p></div>
+      <div class="work-grid">
+        <article id="mimarx" class="work-card reveal" aria-labelledby="mimarx-title">
+          <button class="project-image work-preview mimarx-work-preview" data-project="mimarx" aria-label="Explore MIMARX project"><img src="mimarx-academy.jpg" alt="MIMARX Academy website and architectural showcase" width="1905" height="1057" loading="lazy"><span class="preview-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button>
+          <div class="work-card-body">
+            <p class="work-category" data-en="Client website" data-ar="موقع لعميل">Client website</p>
+            <h3 id="mimarx-title">MIMARX</h3>
+            <p class="work-summary" data-en="A bilingual website for an architecture studio and its academy. Designed and developed in full." data-ar="موقع بالعربية والإنجليزية لاستوديو معماري وأكاديميته. صممته وطورته بالكامل.">A bilingual website for an architecture studio and its academy. Designed and developed in full.</p>
+            <div class="work-card-actions"><a class="work-visit" href="https://www.mimarx-studio.com/academy" target="_blank" rel="noopener"><span class="" data-en="Visit website" data-ar="زيارة الموقع">Visit website</span><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></a><button class="work-details" data-project="mimarx"><span class="" data-en="Details" data-ar="التفاصيل">Details</span></button></div>
+          </div>
         </article>
-        <article class="project nexus-project reveal">
-          <button class="project-image nexus-preview" data-project="nexus" aria-label="Explore NEXUS project"><img src="nexus.png" alt="NEXUS: AI workspace with conversations, projects, and provider selection" width="1600" height="1000" loading="lazy"><span class="image-action" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button>
-          <div class="project-content"><img class="project-logo" src="nexus-icon.png" width="56" height="56" alt="" loading="lazy"><div class="project-heading"><h3>NEXUS</h3><span class="project-kind" data-en="AI workspace" data-ar="مساحة عمل AI">AI workspace</span></div>
-          <p data-en="Your AI tools, brought together. Conversations, project context, and 300 specialist roles in one Windows app." data-ar="أدوات الذكاء الاصطناعي في مكان واحد. محادثات وسياق المشاريع و300 دور متخصص داخل تطبيق Windows.">Your AI tools, brought together. Conversations, project context, and 300 specialist roles in one Windows app.</p>
-          <div class="project-meta"><span data-en="AI integration" data-ar="تكامل أدوات AI">AI integration</span><span data-en="Team workflows" data-ar="تنسيق الفرق">Team workflows</span></div>
-          <button class="text-link" data-project="nexus"><span data-en="Explore project" data-ar="اكتشف المشروع">Explore project</span><span class="icon-circle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button></div>
+        <article id="nexus" class="work-card reveal" aria-labelledby="nexus-title">
+          <button class="project-image work-preview nexus-work-preview" data-project="nexus" aria-label="Explore NEXUS project"><img src="nexus.png" alt="NEXUS AI workspace" width="1600" height="1000" loading="lazy"><span class="preview-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button>
+          <div class="work-card-body">
+            <p class="work-category" data-en="AI workspace" data-ar="مساحة عمل AI">AI workspace</p>
+            <h3 id="nexus-title">NEXUS</h3>
+            <p class="work-summary" data-en="AI tools, conversations, and specialist roles together in one Windows workspace." data-ar="أدوات الذكاء الاصطناعي والمحادثات والأدوار المتخصصة في مساحة عمل واحدة على Windows.">AI tools, conversations, and specialist roles together in one Windows workspace.</p>
+            <div class="work-card-actions"><a class="work-visit" href="https://github.com/Ahmed-Khalil-Mohamed/NEXUS" target="_blank" rel="noopener"><span class="" data-en="View project" data-ar="زيارة المشروع">View project</span><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></a><button class="work-details" data-project="nexus"><span class="" data-en="Details" data-ar="التفاصيل">Details</span></button></div>
+          </div>
         </article>
-
-        <article id="mimarx" class="project client-project reveal" aria-labelledby="mimarx-title">
-          <button class="project-image client-preview" data-project="mimarx" aria-label="Explore MIMARX Studio & Academy project"><img src="mimarx-academy.jpg" alt="MIMARX Academy website: workshop introduction and architectural project showcase" width="1905" height="1057" loading="lazy"><span class="image-action" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button>
-          <div class="client-content">
-            <div class="client-intro"><span class="project-kind" data-en="Client project · Live website" data-ar="مشروع لعميل · موقع منشور">Client project · Live website</span><h3 id="mimarx-title">MIMARX<br><span>Studio & Academy</span></h3><p data-en="From studio showcase to workshop enrollment. A complete bilingual website, designed and developed for an architecture studio." data-ar="من عرض أعمال الاستوديو إلى التسجيل في الورش. موقع متكامل بالعربية والإنجليزية، صممته وطورته لاستوديو معماري.">From studio showcase to workshop enrollment. A complete bilingual website, designed and developed for an architecture studio.</p></div>
-            <div class="client-details"><dl class="client-scope"><div><dt data-en="My role" data-ar="دوري">My role</dt><dd data-en="Full website design & development" data-ar="تصميم وتطوير الموقع بالكامل">Full website design & development</dd></div><div><dt data-en="Built with" data-ar="التقنيات">Built with</dt><dd>HTML · CSS · JavaScript · Node.js</dd></div></dl><div class="client-actions"><a class="button primary" href="https://www.mimarx-studio.com/academy" target="_blank" rel="noopener"><span data-en="Visit website" data-ar="زيارة الموقع">Visit website</span><span class="icon-circle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></a><button class="text-link" data-project="mimarx"><span data-en="Project details" data-ar="تفاصيل المشروع">Project details</span><span class="icon-circle" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button></div></div>
+        <article id="clear" class="work-card reveal" aria-labelledby="clear-title">
+          <button class="project-image work-preview clear-work-preview" data-project="clear" aria-label="Explore Clear Tool project"><img src="clear-tool.png" alt="Clear Tool hardware and maintenance workspace" width="1600" height="1000" loading="lazy"><span class="preview-hint" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></span></button>
+          <div class="work-card-body">
+            <p class="work-category" data-en="Windows utility" data-ar="أدوات Windows">Windows utility</p>
+            <h3 id="clear-title">Clear Tool</h3>
+            <p class="work-summary" data-en="Understand your PC and manage everyday maintenance through a clear, bilingual interface." data-ar="اعرف مكونات جهازك ونظّم مهام الصيانة اليومية بواجهة واضحة بالعربية والإنجليزية.">Understand your PC and manage everyday maintenance through a clear, bilingual interface.</p>
+            <div class="work-card-actions"><a class="work-visit" href="https://github.com/Ahmed-Khalil-Mohamed/clear-tool" target="_blank" rel="noopener"><span class="" data-en="View project" data-ar="زيارة المشروع">View project</span><svg class="icon" aria-hidden="true"><use href="icons.svg#arrow-up-right"></use></svg></a><button class="work-details" data-project="clear"><span class="" data-en="Details" data-ar="التفاصيل">Details</span></button></div>
           </div>
         </article>
       </div>
