@@ -63,3 +63,6 @@ refinements.css adjusts spacing, portrait framing, touch targets, project cards,
 The ten secondary projects are split into two groups of five. project-marquee.js duplicates each group only for seamless visual looping; clones are hidden from assistive technology, removed from the tab order, and forward clicks to the original project trigger. The upper row moves left to right and the lower row right to left using linear CSS transforms. Motion pauses outside the viewport, in hidden tabs, during dialog display, on pointer hover, or through the pause button. Keyboard focus and reduced-motion preferences expose scrollable, static originals.
 
 Contact shortcuts are now a single quiet icon row. The lower contact section emphasizes the email with simple WhatsApp and social links. The biography has its own bordered surface; skills use a separate heading and divided rows. Both languages retain the same content and project detail dialogs.
+
+## Bilingual signature names
+The hero and portrait caption use Allura for the English name and Aref Ruqaa Regular for the Arabic name. The Arabic font is self-hosted as arabic-signature.ttf from the Google Fonts repository (ofl/arefruqaa); its SIL Open Font License is included in ARABIC-SIGNATURE-LICENSE.txt. Caption reveals preserve complete words and Arabic shaping, with the existing reduced-motion fallback.
