@@ -39,3 +39,6 @@ Font licenses: FONT-LICENSE.txt (Manrope used in the printable resume), SIGNATUR
 The owner confirmed full website design and development. The public website and the owner-provided Lite source were reviewed to describe the work. This is a static HTML/CSS/JavaScript public site with Node.js build tooling, not a claim of a Node.js backend or complete LMS.
 The academy preview is an actual capture of https://www.mimarx-studio.com/academy. No client source code, configuration, or private files are included in this repository. Architectural imagery belongs to the client project and is displayed here only as part of the website screenshot.
 The AK favicon is outlined from the existing Allura signature font, with ICO and Apple touch fallbacks. The portrait remains in the profile and resume.
+
+## Additional projects
+Ten secondary project cards link to the owner's public repositories: Recall, FairShare, Stockroom, WarrantyVault, FileNest, GiveTime, ScopeDesk, RescueTable, FixLane, and QueueWise. Names and descriptions were checked against GitHub repository metadata and READMEs on 2026-10-13. Their original public/app-icon.png assets are stored under project-icons/. Cards use staggered scroll reveals and hover/focus feedback; reduced-motion preferences disable animation.
