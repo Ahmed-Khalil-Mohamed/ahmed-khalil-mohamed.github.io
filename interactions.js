@@ -1,5 +1,5 @@
 (() => {
-  const selector = '.button,.icon-button,.text-link,.work-visit,.work-details,.drawer-language,.contact-shortcut,.contact-channel,.mini-card,.project-image,.gallery-dot,.intro-skip,.desktop-nav a,.mobile-nav a,.footer a';
+  const selector = '.button,.icon-button,.text-link,.work-visit,.work-details,.drawer-language,.project-image,.gallery-dot,.intro-skip,.desktop-nav a,.mobile-nav a,.footer a';
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let frame = 0;

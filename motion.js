@@ -4,7 +4,7 @@
   let observer;
   let started = false;
   let exitTimer;
-  const textSelector = '.hero-copy .eyebrow, #hero-title > span, .hero-description > *, .section-heading h2, .section-heading p, .work-category, .work-card h3, .work-summary, .more-work h3, .more-work-heading > p, .about-title h2, .about-title .eyebrow, .about-content > p, .skill-group h3, .skill-group p, .contact h2, .contact-bottom p';
+  const textSelector = '.hero-copy .eyebrow, #hero-title > span, .hero-description > *, .section-heading h2, .section-heading p, .work-category, .work-card h3, .work-summary, .more-work h3, .more-work-heading > p, .about-title h2 > span, .about-title .eyebrow, .about-content > p, .skill-group h3, .skill-group p, .contact h2, .contact-bottom p';
 
   function prepareText() {
     document.querySelectorAll(textSelector).forEach(element => {
