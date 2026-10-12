@@ -1,4 +1,4 @@
-﻿@font-face{font-family:Jakarta;src:url(jakarta-regular.ttf) format('truetype');font-weight:400 500;font-display:swap}
+@font-face{font-family:Jakarta;src:url(jakarta-regular.ttf) format('truetype');font-weight:400 500;font-display:swap}
 @font-face{font-family:Jakarta;src:url(jakarta-bold.ttf) format('truetype');font-weight:600 800;font-display:swap}
 @font-face{font-family:Signature;src:url(signature.ttf) format('truetype');font-weight:400;font-display:swap}
 /* White liquid glass: original web approximation. Variance 7 / motion 6 / density 3.
@@ -198,3 +198,8 @@ dialog h2{font-family:Jakarta,'Segoe UI',sans-serif;font-size:clamp(1.7rem,5vw,2
 @media(min-width:1024px){.project-gallery{padding:2.5rem 2rem}.project-copy{padding:2rem 2.5rem}.gallery-stage{aspect-ratio:16/11}}
 @media(max-width:380px){.project-copy,.project-gallery{padding:1rem}.gallery-controls{gap:.2rem}.gallery-dot{width:1.8rem}}
 @media(prefers-reduced-transparency:reduce){#project-dialog::backdrop{background:#d4deedeb;backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* Allura is the existing AK signature face; Arabic keeps its native letterforms. */
+html[lang=en] .hero h1{font-family:Signature,cursive;font-weight:400;font-size:clamp(7rem,13vw,11rem);line-height:.95;letter-spacing:-.02em}
+html[lang=en] #hero-title .writing-word{padding-inline:.3em;margin-inline:-.3em}
+html[lang=en] #hero-title .name-last{padding-inline-start:.18em}
