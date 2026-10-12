@@ -1,4 +1,4 @@
-﻿# Ahmed Khaled Mohamed - Portfolio
+# Ahmed Khalil - Portfolio
 
 A bilingual, responsive portfolio hosted on GitHub Pages.
 
@@ -27,3 +27,10 @@ No graduation date, employer, university, proficiency score, or contact address 
 ## Assets
 Portrait and application screenshots come from the owner's public GitHub profile and repositories. The product screenshots are actual interface captures. NEXUS remains proprietary; this site does not publish its application source.
 Manrope by Mikhail Sharanda is distributed under the SIL Open Font License in FONT-LICENSE.txt.
+
+## Visual system
+White liquid-glass web styling, a typographic AK signature in Allura, Plus Jakarta Sans for English, IBM Plex Sans Arabic for Arabic, and Phosphor Light icons. Original square portrait preserved without image alteration. Native scrollbar styling and reduced-motion/reduced-transparency preferences are supported.
+
+The glass-ribbon.jpg illustration was generated with the built-in image generation tool. Prompt: a clear optical-glass ribbon in an open flowing loop, pale ice blue refraction, bright white studio background, soft daylight, restrained highlights, no text or logos. It is decorative artwork, not a photograph of a physical product.
+
+Font licenses: FONT-LICENSE.txt (Manrope used in the printable resume), SIGNATURE-LICENSE.txt (Allura), JAKARTA-LICENSE.txt (Plus Jakarta Sans), ARABIC-FONT-LICENSE.txt (IBM Plex Sans Arabic). Icon license: ICONS-LICENSE.txt.
