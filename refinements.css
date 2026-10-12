@@ -224,3 +224,5 @@ html[lang=ar] .hero h1{font-family:ArabicSignature,PlexArabic,serif;font-weight:
 .portrait figcaption strong{font-family:Signature,cursive;font-weight:400;font-size:clamp(1.8rem,3vw,2.25rem);letter-spacing:0;line-height:1.25}
 html[lang=ar] .portrait figcaption strong{font-family:ArabicSignature,PlexArabic,serif;font-size:1.85rem;line-height:1.55}
 @media(max-width:767px){html[lang=ar] .hero h1{font-size:clamp(5rem,21vw,7rem);line-height:1.25;margin-top:.7rem}}
+/* A restrained lift for the floating navigation surface. */
+.header .desktop-nav{box-shadow:inset 0 1px 0 #fff,0 5px 14px #344b6509,0 14px 34px #344b6512}
