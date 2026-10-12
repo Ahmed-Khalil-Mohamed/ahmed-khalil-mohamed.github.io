@@ -203,3 +203,26 @@ dialog h2{font-family:Jakarta,'Segoe UI',sans-serif;font-size:clamp(1.7rem,5vw,2
 html[lang=en] .hero h1{font-family:Signature,cursive;font-weight:400;font-size:clamp(7rem,13vw,11rem);line-height:.95;letter-spacing:-.02em}
 html[lang=en] #hero-title .writing-word{padding-inline:.3em;margin-inline:-.3em}
 html[lang=en] #hero-title .name-last{padding-inline-start:.18em}
+
+/* Direct contact links, kept clear of the primary navigation. */
+.contact-shortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;max-width:25rem;margin-top:1.5rem}
+.contact-shortcut{display:flex;align-items:center;justify-content:center;gap:.45rem;min-height:2.75rem;padding:.55rem .65rem;border:1px solid #e3eaf2;border-radius:100px;background:#ffffffa6;box-shadow:inset 0 1px 0 #fff,0 4px 14px #526d8b05;color:#52667e;font-size:.75rem;white-space:nowrap;transition:transform .35s var(--ease),background .35s,border-color .35s}
+.contact-shortcut .icon{width:1.1rem;height:1.1rem;flex-shrink:0}
+.contact-shortcut:hover{background:#fff;border-color:#b7cadd;transform:translateY(-2px);color:#283c55}
+.contact::before{background:url(contact-glass.png) right center/cover no-repeat;opacity:.85;mix-blend-mode:multiply}
+[dir=rtl] .contact::before{transform:scaleX(-1)}
+.contact-bottom{margin-top:1.5rem}
+.contact-bottom p{max-width:35rem;color:#596b81}
+.contact-channels{display:grid;grid-template-columns:minmax(0,1fr);gap:.75rem;max-width:44rem;margin-top:1.75rem}
+.contact-channel{display:flex;align-items:center;gap:.85rem;padding:1rem;min-width:0;min-height:5rem;border:1px solid #ffffffed;border-radius:1.1rem;background:#ffffffc9;box-shadow:inset 0 1px 0 #fff,0 7px 24px #526d8b09;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.contact-channel-icon{display:grid;place-items:center;flex-shrink:0;width:2.5rem;height:2.5rem;border-radius:.8rem;background:#eaf0f6;color:#526f91}
+.contact-channel-icon .icon{width:1.35rem;height:1.35rem}
+.contact-channel-copy{display:flex;flex-direction:column;gap:.2rem;min-width:0;flex:1}
+.contact-label{font-size:.72rem;color:#718197}
+.contact-value{font-size:.82rem;font-weight:500;color:#30445d;overflow-wrap:anywhere}
+.contact-channel>.icon{display:none;width:1rem;height:1rem;flex-shrink:0;color:#8395a9}
+.contact-channel:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 #fff,0 12px 28px #526d8b16}
+@media(min-width:768px){.contact-channels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1024px){.contact-channel>.icon{display:block}.contact-shortcuts{grid-template-columns:repeat(4,minmax(0,1fr))}.contact-shortcut{padding-inline:.4rem}}
+@media(prefers-reduced-motion:reduce){.contact-shortcut:hover,.contact-channel:hover{transform:none}}
+@media(prefers-reduced-transparency:reduce){.contact-channel{background:#f9fbfd;backdrop-filter:none;-webkit-backdrop-filter:none}}

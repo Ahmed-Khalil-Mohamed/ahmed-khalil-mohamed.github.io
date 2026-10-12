@@ -50,3 +50,8 @@ All 13 projects open a shared native dialog. The desktop layout keeps the screen
 The original Allura AK outlines are revealed with sequential SVG centerline masks. The same mark appears in the header, portrait, mobile drawer, entrance, and pending project screenshots. The glass entrance lasts 2.8 seconds, supports immediate entry/Escape, and has a five-second failsafe if scripts fail. It never waits for lazy images. Main content is temporarily inert during the entrance; focus is restored if entry was activated by keyboard. Reduced-motion skips the entrance and disables handwriting/reveal animations. Back/forward cache restoration does not replay the entrance.
 
 Text reveals use complete words to preserve Arabic shaping, with a single full-text equivalent for assistive technology. IntersectionObserver reveals each block once; language changes rebuild the visible words. The HTML stays readable with JavaScript disabled. Image loaders settle on load or error; project galleries show a localized unavailable state on image failure. No external animation dependency is required.
+
+## Contact channels
+The owner supplied the public email and WhatsApp number. Facebook and LinkedIn profile URLs were read from the signed-in browser on 2026-10-13. Contact shortcuts appear in the hero and the full contact section. The phone uses Egypt's +20 prefix for WhatsApp. No message is sent automatically.
+
+contact-glass.png is a generated decorative image for the contact section only: two translucent frosted glass arcs on a pearl-white studio backdrop, suggesting conversation, with clear space for text. The hero retains glass-ribbon.jpg and the original portrait.
